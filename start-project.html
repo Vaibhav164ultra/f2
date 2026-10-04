@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Start a Project — VRH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f3ec;--paper:#fffdf8;--ink:#10131a;--muted:#37404d;--line:rgba(16,19,26,.15);--blue:#4b45e8;--cyan:#00a8b8;--coral:#ef6249;--navy:#18233f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 82% 12%,rgba(75,69,232,.12),transparent 25%),radial-gradient(circle at 12% 80%,rgba(0,184,200,.10),transparent 24%),var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.page{width:min(1240px,92vw);margin:auto;padding:26px 0 90px}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:0 0 22px}.logo{font:700 27px/1 'Space Grotesk';letter-spacing:-.06em}.back{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#303744}.back:hover{color:var(--blue)}
+.hero{padding:90px 0 58px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:end}.kicker{font-size:11px;letter-spacing:.17em;text-transform:uppercase;font-weight:800;color:var(--blue)}h1{font:600 clamp(68px,10vw,150px)/.78 'Space Grotesk';letter-spacing:-.075em;margin:18px 0 0}h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.4px rgba(24,35,63,.65)}.hero-copy{font-size:16px;line-height:1.75;color:var(--muted);max-width:500px}
+.panel{background:rgba(255,253,248,.78);border:1px solid var(--line);border-radius:28px;padding:38px;box-shadow:0 35px 100px rgba(24,35,63,.08);backdrop-filter:blur(18px)}form{display:grid;gap:24px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.field{display:grid;gap:9px}.field.full{grid-column:1/-1}label{font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#303844}input,select,textarea{width:100%;border:1px solid rgba(16,19,26,.20);border-radius:13px;background:#fffefb;color:var(--ink);padding:15px 16px;font:500 15px Inter;outline:none;transition:.2s;border-color:rgba(16,19,26,.20)}input::placeholder,textarea::placeholder{color:#626a75}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(75,69,232,.10)}textarea{min-height:150px;resize:vertical}.budget{display:flex;gap:9px;flex-wrap:wrap}.budget label{font-size:12px;letter-spacing:0;text-transform:none;font-weight:600;border:1px solid rgba(16,19,26,.18);border-radius:999px;padding:10px 13px;cursor:pointer;background:#fffefb}.budget input{display:none}.budget input:checked+span{color:var(--blue);font-weight:800}.budget label:has(input:checked){border-color:var(--blue);background:rgba(75,69,232,.07)}button{border:0;border-radius:14px;background:var(--navy);color:white;padding:18px 22px;font:700 12px Inter;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s}button:hover{transform:translateY(-2px);background:#4b45e8;box-shadow:0 18px 45px rgba(75,69,232,.25)}.note{font-size:12px;line-height:1.65;color:#4b5360}.success{display:none;margin-top:22px;border:1px solid rgba(0,168,184,.25);background:rgba(0,184,200,.07);padding:18px;border-radius:14px;color:#155d66;font-weight:600}.footer{margin-top:38px;display:flex;justify-content:space-between;color:#4b5360;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+/* Carry the homepage motion language into the project form. */
+.top{background:linear-gradient(90deg,var(--cyan),var(--blue),var(--coral),var(--lime),var(--cyan)) left bottom/220% 1px no-repeat;border:0;animation:formReveal .7s ease both,formEdgeFlow 10s linear infinite}
+.back{transition:color .25s,transform .25s}.back:hover{transform:translateX(-4px)}
+.hero>div,.hero-copy{animation:formReveal .8s cubic-bezier(.2,.8,.2,1) both}
+.hero-copy{animation-delay:.14s}
+.panel{border:1px solid transparent;background:linear-gradient(rgba(255,253,248,.82),rgba(255,253,248,.82)) padding-box,linear-gradient(135deg,var(--cyan),var(--blue),var(--coral),var(--lime),var(--cyan)) border-box;background-size:100% 100%,220% 220%;animation:formReveal .85s cubic-bezier(.2,.8,.2,1) .22s both,formEdgeFlow 12s linear infinite;transition:box-shadow .35s ease,transform .35s ease}
+.panel:hover{box-shadow:0 38px 110px rgba(24,35,63,.12),0 0 24px rgba(0,168,184,.12)}
+.field label{transition:color .25s,transform .25s}.field:focus-within label{color:var(--blue);transform:translateX(3px)}
+input,select,textarea{transition:border-color .25s,box-shadow .25s,transform .25s}
+input:focus,select:focus,textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 1px var(--cyan),0 0 0 4px rgba(75,69,232,.12);transform:translateY(-1px)}
+.budget label{transition:transform .25s,border-color .25s,box-shadow .25s,background .25s}
+.budget label:hover{transform:translateY(-2px);border-color:var(--cyan);box-shadow:0 5px 16px rgba(0,168,184,.12)}
+.budget label:has(input:checked){border-color:var(--coral);box-shadow:0 0 0 2px rgba(239,98,73,.12)}
+button{border:1px solid transparent;background:linear-gradient(110deg,var(--navy),#252461) padding-box,linear-gradient(110deg,var(--cyan),var(--blue),var(--coral),var(--lime)) border-box;background-size:100% 100%,220% 100%;animation:formEdgeFlow 9s linear infinite;transition:transform .25s,box-shadow .25s,background-position .5s}
+button:hover{background:linear-gradient(110deg,#26225c,var(--blue)) padding-box,linear-gradient(110deg,var(--cyan),var(--blue),var(--coral),var(--lime)) border-box;box-shadow:0 18px 45px rgba(75,69,232,.22),0 0 18px rgba(0,168,184,.15)}
+.success[style*="display: block"]{animation:formReveal .45s ease both}
+.footer{animation:formReveal .7s ease .35s both}
+@keyframes formReveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes formEdgeFlow{to{background-position:right bottom,100% 100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding:60px 0 36px}.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:24px}h1{font-size:18vw}.footer{flex-direction:column;gap:12px}}
+</style></head>
+<body>
+<div class="page">
+<header class="top"><a class="logo" href="/">VRH</a><a class="back" href="/">← Back to studio</a></header>
+<section class="hero"><div><div class="kicker">06 / Initiate a project</div><h1>LET'S BUILD<br><em>SOMETHING.</em></h1></div><p class="hero-copy">Tell us what you're building, where you're stuck, and what success looks like. Give us the rough version — we'll turn it into a clear direction, scope and next step.</p></section>
+<section class="panel"><form id="project-form"><div class="grid">
+<div class="field"><label for="name">Your name *</label><input id="name" name="name" required placeholder="Your name"></div>
+<div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" required placeholder="you@company.com"></div>
+<div class="field"><label for="company">Company / brand</label><input id="company" name="company" placeholder="Company or project name"></div>
+<div class="field"><label for="type">What do you need? *</label><select id="type" name="type" required><option value="">Choose one</option><option>Website / Web app</option><option>3D / Motion experience</option><option>UI / UX design</option><option>AI system / automation</option><option>Brand + digital experience</option><option>Something else</option></select></div>
+<div class="field full"><label>Approximate budget</label><div class="budget">
+<label><input type="radio" name="budget" value="₹25k–₹50k"><span>₹25k–₹50k</span></label><label><input type="radio" name="budget" value="₹50k–₹1L"><span>₹50k–₹1L</span></label><label><input type="radio" name="budget" value="₹1L–₹2L"><span>₹1L–₹2L</span></label><label><input type="radio" name="budget" value="₹2L+"><span>₹2L+</span></label><label><input type="radio" name="budget" value="Not sure"><span>Not sure yet</span></label></div></div>
+<div class="field full"><label for="timeline">Timeline</label><select id="timeline" name="timeline"><option value="">Select if you know</option><option>ASAP</option><option>2–4 weeks</option><option>1–2 months</option><option>2–3 months</option><option>Flexible</option></select></div>
+<div class="field full"><label for="message">Tell us about the project *</label><textarea id="message" name="message" required placeholder="What are you trying to build? What should the website / product achieve? Include links if you have them."></textarea></div>
+</div><p class="note">No polished brief needed. The more context you give us, the better we can understand the project before the first conversation.</p><button type="submit">Send project brief ↗</button><div class="success" id="success">Your project brief is ready. Your email app will open with the details addressed to VRH.</div></form></section>
+<div class="footer"><span>© 2026 VRH</span><span>Digital experiences / Web / 3D / AI</span></div>
+</div>
+<script>
+document.getElementById('project-form').addEventListener('submit',function(e){e.preventDefault();const f=new FormData(this);const lines=[`Name: ${f.get('name')}`,`Email: ${f.get('email')}`,`Company: ${f.get('company')||'—'}`,`Project: ${f.get('type')}`,`Budget: ${f.get('budget')||'—'}`,`Timeline: ${f.get('timeline')||'—'}`,`\nProject details:\n${f.get('message')}`];const subject=encodeURIComponent('New VRH project enquiry — '+f.get('name'));const body=encodeURIComponent(lines.join('\n'));document.getElementById('success').style.display='block';window.location.href=`mailto:hello@vrh.studio?subject=${subject}&body=${body}`;});
+</script></body></html>
